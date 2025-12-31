@@ -72,65 +72,89 @@ cd secure-api-platform-demo
 
 ### 2️⃣ Create and activate a virtual environment
 
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 ### 3️⃣ Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 ### 4️⃣ Create the .env file
 
+```bash
 DATABASE_URL=postgresql+psycopg2://postgres:postgres@127.0.0.1:5433/demo
 JWT_SECRET=replace_with_a_long_random_secret
 JWT_ALGORITHM=HS256
 ACCESS_TOKEN_EXP_MINUTES=60
+```
 
 ### 5️⃣ Start PostgreSQL using Docker
 
+```bash
 docker compose up -d
+```
 
-Verify the container is running: docker ps
+## Verify the container is running: 
+
+```bash
+docker ps
+```
 
 ### 6️⃣ Create database tables
 
+```bash
 python -m app.db.init_db
+```
 
 ### 7️⃣ Start the API server
 
+```bash
 uvicorn app.main:app --reload --log-level debug
+```
 
-The API will be available at:
+## The API will be available at:
 
 http://127.0.0.1:8000
 
 
 ### 🧪 Testing the API
 
-Health check:
+## Health check:
 
+```bash
 curl http://127.0.0.1:8000/health
+```
 
-Response: 
+## Response: 
 
+```bash
 {"status": "ok"}
+```
 
-Register a user:
+## Register a user:
 
+```bash
 curl -i -X POST "http://127.0.0.1:8000/auth/register" \
   -H "Content-Type: application/json" \
   -d '{"email":"user@example.com","password":"StrongPassword123!"}'
+```
 
-Login:
+# Login:
 
+```bash
 curl -i -X POST "http://127.0.0.1:8000/auth/login" \
   -H "Content-Type: application/json" \
   -d '{"email":"user@example.com","password":"StrongPassword123!"}'
+```
 
 ### 🔑 JWT Tokens
 On successful registration or login, the API returns a JWT access token.
 
-This token can be used to:
+# This token can be used to:
 
 - authenticate protected endpoints
 - identify the user
