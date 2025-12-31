@@ -98,7 +98,7 @@ ACCESS_TOKEN_EXP_MINUTES=60
 docker compose up -d
 ```
 
-## Verify the container is running: 
+### Verify the container is running: 
 
 ```bash
 docker ps
@@ -116,26 +116,26 @@ python -m app.db.init_db
 uvicorn app.main:app --reload --log-level debug
 ```
 
-## The API will be available at:
+### The API will be available at:
 
 http://127.0.0.1:8000
 
 
 ### 🧪 Testing the API
 
-## Health check:
+### Health check:
 
 ```bash
 curl http://127.0.0.1:8000/health
 ```
 
-## Response: 
+### Response: 
 
 ```bash
 {"status": "ok"}
 ```
 
-## Register a user:
+### Register a user:
 
 ```bash
 curl -i -X POST "http://127.0.0.1:8000/auth/register" \
@@ -143,7 +143,7 @@ curl -i -X POST "http://127.0.0.1:8000/auth/register" \
   -d '{"email":"user@example.com","password":"StrongPassword123!"}'
 ```
 
-# Login:
+### Login:
 
 ```bash
 curl -i -X POST "http://127.0.0.1:8000/auth/login" \
@@ -151,10 +151,10 @@ curl -i -X POST "http://127.0.0.1:8000/auth/login" \
   -d '{"email":"user@example.com","password":"StrongPassword123!"}'
 ```
 
-### 🔑 JWT Tokens
+## 🔑 JWT Tokens
 On successful registration or login, the API returns a JWT access token.
 
-# This token can be used to:
+### This token can be used to:
 
 - authenticate protected endpoints
 - identify the user
@@ -189,7 +189,7 @@ On successful registration or login, the API returns a JWT access token.
 
 ---
 
-## ✅ Running Tests
+### ✅ Running Tests
 
 This repo includes a small set of high-signal tests focused on the most important security and platform behaviors:
 
