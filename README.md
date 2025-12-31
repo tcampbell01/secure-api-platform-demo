@@ -48,13 +48,14 @@ This repo covers **real-world production concepts**, including:
 
 ```mermaid
 flowchart TD
-    A[Client<br/>(curl / frontend)] --> B[FastAPI Application]
+  A["Client (curl or frontend)"] --> B["FastAPI application"]
 
-    B --> C1[Auth Routes<br/>(/auth/register, /auth/login)]
-    B --> C2[Security Layer<br/>(hashing, JWTs)]
-    B --> C3[Database Session Handling]
+  B --> C1["Auth routes: /auth/register, /auth/login"]
+  B --> C2["Security layer: hashing + JWT"]
+  B --> C3["DB session handling"]
 
-    B --> D[(PostgreSQL Database<br/>(Docker))]
+  B --> D["PostgreSQL database (Docker)"]
+
 ```
 
 
