@@ -1,0 +1,41 @@
+# Web Framework:
+
+# The API Framework
+fastapi==0.115.6
+# the ASGI server that runs FastAPI
+uvicorn[standard]==0.30.6
+
+
+# Database: 
+
+#Python <--> SQL
+SQLAlchemy==2.0.36
+# Postgres driver
+psycopg2-binary==2.9.10
+
+#Validation and settings:
+
+#Request/response validation
+pydantic==2.10.4
+#environment variables- python config
+pydantic-settings==2.7.0
+#loads .env files
+python-dotenv==1.0.1
+
+#Security:
+
+#JWT creation and verification
+python-jose[cryptography]==3.3.0
+#password hashing abstraction
+passlib==1.7.4
+#secure password hashing algorithm
+bcrypt==5.0.0
+
+#Testing:
+
+#test runner
+pytest==8.3.4
+#HTTP client used in FastAPI tests
+httpx==0.28.1
+
+
