@@ -20,7 +20,7 @@ pydantic==2.10.4
 #environment variables- python config
 pydantic-settings==2.7.0
 #loads .env files
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 
 #Security:
 
